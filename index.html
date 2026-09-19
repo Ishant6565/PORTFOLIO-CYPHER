@@ -145,7 +145,7 @@
      ------------------------------------------------------------- */
   html, body {
     background-color: #111111 !important;
-    overflow-x: hidden !important;
+    /* overflow-x removed to preserve sticky scroll */
   }
   #main, div[data-framer-root], .framer-zpn31 {
     background-color: #faf7f3;
@@ -186,9 +186,7 @@
   html {
     scroll-behavior: smooth !important;
   }
-  body {
-    overflow-x: hidden;
-  }
+  body { /* overflow-x removed */ }
 </style>
 
 
@@ -321,10 +319,7 @@
   }
 
   /* STRICT FOOTER CUTOFF: Clean finish at black CYPHER footer */
-  html, body {
-    background-color: #111111 !important;
-    overflow-x: hidden !important;
-  }
+  html, body { background-color: #111111 !important; overflow: visible !important; }
 
   #main, div[data-framer-root], .framer-zpn31 {
     background-color: #faf7f3;
