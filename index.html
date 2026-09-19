@@ -1504,4 +1504,17 @@
     }, true);
   })();
 </script>
-</body>
+<script>
+  (() => {
+    const cypherTitle = 'CYPHER - The Personal Lab of Ishant Gupta';
+    const enforceCypherTitle = () => {
+      if (document.title !== cypherTitle) document.title = cypherTitle;
+    };
+    enforceCypherTitle();
+    new MutationObserver(enforceCypherTitle).observe(document.head, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+    });
+  })();
+</script></body>
