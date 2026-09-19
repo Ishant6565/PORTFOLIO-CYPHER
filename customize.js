@@ -11,8 +11,8 @@ const fs = require('fs');
 
 const myConfig = {
   // Your Name & Brand
-  name: "Majd", // Change to your name e.g. "Ishan"
-  logoText: "MAJD", // Change to e.g. "ISHAN"
+  name: "Cypher", // Change to your name e.g. "Ishan"
+  logoText: "CYPHER", // Change to e.g. "ISHAN"
   
   // Your Role & Headline
   role: "SOFTWARE ENGINEER",
