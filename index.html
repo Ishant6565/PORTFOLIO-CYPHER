@@ -139,274 +139,6 @@
     transform: translateY(-4px) scale(1.01) !important;
   }
 
-  /* Contact Modal & Form Styles */
-  #contact-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.88);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    z-index: 9999998;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  #contact-modal.active {
-    display: flex;
-    opacity: 1;
-  }
-  .contact-modal-card {
-    background: #0f0f0f;
-    border: 1px solid rgba(250, 247, 243, 0.16);
-    border-radius: 18px;
-    width: 100%;
-    max-width: 490px;
-    max-height: 90vh;
-    overflow-y: auto;
-    padding: 32px 28px 26px;
-    box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95);
-    position: relative;
-    box-sizing: border-box;
-    transform: translateY(16px) scale(0.97);
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  #contact-modal.active .contact-modal-card {
-    transform: translateY(0) scale(1);
-  }
-  .contact-modal-close-btn {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    background: rgba(250, 247, 243, 0.08);
-    border: 1px solid rgba(250, 247, 243, 0.14);
-    color: #faf7f3;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-  }
-  .contact-modal-close-btn:hover {
-    background: rgba(250, 247, 243, 0.22);
-    transform: scale(1.08);
-  }
-  .contact-badge-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    background: rgba(74, 222, 128, 0.12);
-    border: 1px solid rgba(74, 222, 128, 0.28);
-    color: #4ade80;
-    font-family: 'Inter', sans-serif;
-    font-size: 11.5px;
-    font-weight: 500;
-    padding: 4px 10px;
-    border-radius: 9999px;
-    margin-bottom: 12px;
-    letter-spacing: 0.01em;
-  }
-  .contact-pulse-dot {
-    width: 7px;
-    height: 7px;
-    background: #4ade80;
-    border-radius: 50%;
-    box-shadow: 0 0 8px #4ade80;
-    animation: contactPulseAnim 2s infinite ease-in-out;
-  }
-  @keyframes contactPulseAnim {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.35; transform: scale(0.75); }
-  }
-  .contact-modal-title {
-    font-family: 'Archivo', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #faf7f3;
-    margin: 0 0 6px 0;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-  }
-  .contact-modal-desc {
-    font-family: 'Inter', sans-serif;
-    font-size: 13.5px;
-    color: rgba(250, 247, 243, 0.65);
-    margin: 0 0 22px 0;
-    line-height: 1.5;
-  }
-  .contact-form-group {
-    margin-bottom: 16px;
-    text-align: left;
-  }
-  .contact-form-group label {
-    display: block;
-    font-family: 'Inter', sans-serif;
-    font-size: 12.5px;
-    font-weight: 500;
-    color: rgba(250, 247, 243, 0.85);
-    margin-bottom: 6px;
-  }
-  .contact-form-group input,
-  .contact-form-group textarea {
-    width: 100%;
-    background: #171717;
-    border: 1px solid rgba(250, 247, 243, 0.14);
-    border-radius: 9px;
-    color: #faf7f3;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    padding: 10px 14px;
-    box-sizing: border-box;
-    transition: all 0.2s ease;
-    outline: none;
-  }
-  .contact-form-group input:focus,
-  .contact-form-group textarea:focus {
-    border-color: rgba(250, 247, 243, 0.6);
-    background: #1e1e1e;
-    box-shadow: 0 0 0 3px rgba(250, 247, 243, 0.12);
-  }
-  .contact-form-group input::placeholder,
-  .contact-form-group textarea::placeholder {
-    color: rgba(250, 247, 243, 0.32);
-    font-size: 13.5px;
-  }
-  .contact-form-group textarea {
-    resize: vertical;
-    min-height: 95px;
-  }
-  .contact-privacy-badge {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    color: rgba(250, 247, 243, 0.55);
-    margin-bottom: 18px;
-    line-height: 1.4;
-  }
-  .contact-submit-btn {
-    width: 100%;
-    background: #faf7f3;
-    color: #111111;
-    border: none;
-    border-radius: 9px;
-    font-family: 'Archivo', sans-serif;
-    font-size: 14.5px;
-    font-weight: 600;
-    padding: 12px 18px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .contact-submit-btn:hover {
-    background: #ffffff;
-    box-shadow: 0 6px 20px rgba(250, 247, 243, 0.3);
-    transform: translateY(-1px);
-  }
-  .contact-submit-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-  }
-  .contact-status-state {
-    text-align: center;
-    padding: 24px 8px 12px;
-  }
-  .contact-status-state .check-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: rgba(74, 222, 128, 0.15);
-    border: 1px solid rgba(74, 222, 128, 0.35);
-    color: #4ade80;
-    font-size: 24px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-  }
-  .contact-status-state h3 {
-    font-family: 'Archivo', sans-serif;
-    color: #faf7f3;
-    font-size: 21px;
-    font-weight: 700;
-    margin: 0 0 8px;
-    letter-spacing: -0.02em;
-  }
-  .contact-status-state p {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color: rgba(250, 247, 243, 0.7);
-    line-height: 1.5;
-    margin: 0 0 20px;
-  }
-  .contact-close-success-btn {
-    background: rgba(250, 247, 243, 0.12);
-    border: 1px solid rgba(250, 247, 243, 0.22);
-    color: #faf7f3;
-    padding: 10px 26px;
-    border-radius: 8px;
-    font-family: 'Archivo', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  .contact-close-success-btn:hover {
-    background: rgba(250, 247, 243, 0.25);
-  }
-  .contact-footer-note {
-    margin-top: 16px;
-    padding-top: 14px;
-    border-top: 1px solid rgba(250, 247, 243, 0.08);
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    color: rgba(250, 247, 243, 0.45);
-  }
-  .contact-footer-note a {
-    color: #faf7f3;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  .contact-footer-trigger-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-    background: #faf7f3;
-    color: #111;
-    font-family: 'Archivo', sans-serif;
-    font-size: 13.5px;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    text-decoration: none;
-  }
-  .contact-footer-trigger-btn:hover {
-    background: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(250, 247, 243, 0.25);
-  }
-
   /* -------------------------------------------------------------
      STRICT FOOTER CUTOFF: Clean finish at black CYPHER footer
      Hide all unmounted/duplicate SSR main siblings & gap elements
@@ -418,12 +150,24 @@
   #main, div[data-framer-root], .framer-zpn31 {
     background-color: #faf7f3;
   }
-  #main ~ div:not(#poster-lightbox):not(#contact-modal):not(#svg-templates),
+  #main ~ div:not(#poster-lightbox):not(#svg-templates),
   #main ~ a,
   #main ~ p,
   .framer-1p2pwmk-container ~ * {
     display: none !important;
   }
+  
+  /* =========================================================================
+     Ensure "Let's talk." Section and Inline Form Are Always Visible
+     ========================================================================= */
+  section[data-framer-name="Contact Section"],
+  section[data-framer-name="Contact Section"] *,
+  section[data-framer-name="Contact Section"] form,
+  section[data-framer-name="Contact Section"] form * {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
   .framer-soKIl.framer-788ly6, footer.framer-788ly6 {
     background-color: #111111 !important;
     padding-bottom: 50px !important;
@@ -584,240 +328,218 @@
     scroll-behavior: smooth !important;
   }
 
-  /* Projects Section Scroll Offset */
-  #projects,
-  [data-framer-name="Projects Section"],
-  .framer-1ut795m {
-    scroll-margin-top: 80px !important;
-  }
-
-  /* 1. Google Circular Badges in Certificates */
-  .framer-oiibR .framer-1i87y9p {
-    width: 48px !important;
-    height: 48px !important;
-    min-width: 48px !important;
-    min-height: 48px !important;
-    border-radius: 50% !important;
-    background: #ffffff !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    overflow: hidden !important;
-    padding: 3px !important;
-    box-sizing: border-box !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
-  }
-
-  .framer-oiibR .framer-1i87y9p img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    border-radius: 50% !important;
-    display: block !important;
-  }
-
-  /* 2. Thoughts / Poster Cards Cursor */
-  .framer-1leqxa3 > *,
-  .framer-1leqxa3 [data-framer-name],
-  .framer-1leqxa3 a {
-    cursor: pointer !important;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  }
-  .framer-1leqxa3 > *:hover,
-  .framer-1leqxa3 [data-framer-name]:hover {
-    transform: translateY(-4px) scale(1.015) !important;
-  }
-
-  /* 3. GitHub Icon Badge Next to Project Titles */
-  .project-title-wrapper {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    flex-wrap: wrap !important;
-  }
-
-  .project-github-icon-link {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    color: #111111 !important;
-    opacity: 0.75 !important;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    vertical-align: middle !important;
-    margin-left: 10px !important;
-    padding: 4px !important;
-    border-radius: 6px !important;
-    background: rgba(0, 0, 0, 0.05) !important;
-    border: 1px solid rgba(0, 0, 0, 0.08) !important;
-    text-decoration: none !important;
-    cursor: pointer !important;
-  }
-  .project-github-icon-link:hover {
-    opacity: 1 !important;
-    color: #000000 !important;
-    background: rgba(0, 0, 0, 0.12) !important;
-    border-color: rgba(0, 0, 0, 0.2) !important;
-    transform: scale(1.12) !important;
-  }
-
-  /* View More Projects Trigger Button */
-  .view-more-projects-trigger-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    background: #111111 !important;
-    color: #faf7f3 !important;
-    font-family: 'Archivo', sans-serif !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    padding: 10px 22px !important;
-    border-radius: 9999px !important;
-    border: 1px solid rgba(250, 247, 243, 0.25) !important;
-    cursor: pointer !important;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    text-decoration: none !important;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4) !important;
-    vertical-align: middle !important;
-    margin-left: 0 !important;
-    align-self: flex-end !important;
-    z-index: 5 !important;
-  }
-  .view-more-projects-trigger-btn:hover {
-    background: #222222 !important;
-    border-color: rgba(250, 247, 243, 0.55) !important;
-    transform: translateY(-2px) scale(1.04) !important;
-    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.55) !important;
-  }
-  @media (max-width: 809.98px) {
-    .view-more-projects-trigger-btn {
-      margin-top: 14px !important;
-      align-self: flex-start !important;
-    }
-  }
-
-  /* Inline Extra Project Cards in Grid */
-  .cypher-extra-project-card {
-    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  }
-  .cypher-extra-project-card.cypher-card-hidden {
+  /* Hide Framer watermark badge if rendered */
+  #__framer-badge-container,
+  a[href*="framer.link"] {
     display: none !important;
     opacity: 0 !important;
-    transform: translateY(20px) !important;
-  }
-  .cypher-extra-project-card.cypher-card-visible {
-    display: flex !important;
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    animation: cypherCardFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
-  }
-  @keyframes cypherCardFadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* 4. CYPHER Watermark: Flush to Floor Edge-to-Edge */
-  .framer-soKIl.framer-788ly6,
-  footer.framer-788ly6 {
-    position: relative !important;
-    padding-bottom: 220px !important;
-    overflow: hidden !important;
-  }
-
-  .framer-soKIl .framer-3vb2n7,
-  .framer-3vb2n7 {
-    display: block !important;
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    right: auto !important;
-    bottom: -10px !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
     pointer-events: none !important;
-    user-select: none !important;
-    z-index: 1 !important;
-    line-height: 0 !important;
-    opacity: 1 !important;
+    visibility: hidden !important;
   }
 
-  .framer-3vb2n7 svg {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    height: auto !important;
-    display: block !important;
-    overflow: hidden !important;
-    margin-bottom: 0 !important;
-    vertical-align: bottom !important;
-  }
-
-
-/* =========================================================================
-     Strict Footer Cutoff - Zero Content or Gap Below Black Footer
-     ========================================================================= */
-  html {
-    background-color: #111111 !important;
-  }
-  body {
+  /* STRICT FOOTER CUTOFF: Clean finish at black CYPHER footer */
+  html, body {
     background-color: #111111 !important;
     overflow-x: hidden !important;
   }
-  #main {
-    background-color: #faf7f3;
-  }
-  div[data-framer-root],
-  .framer-zpn31 {
+
+  #main, div[data-framer-root], .framer-zpn31 {
     background-color: #faf7f3;
   }
 
-  .framer-1p2pwmk-container {
-    background-color: #111111 !important;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-    width: 100% !important;
-  }
-
-  .framer-soKIl.framer-788ly6,
-  footer.framer-788ly6 {
-    position: relative !important;
-    padding-bottom: 50px !important;
-    margin-bottom: 0 !important;
-    background-color: #111111 !important;
-    overflow: hidden !important;
-    width: 100% !important;
-  }
-
-  /* Strictly remove and hide all rogue siblings and junk below #main */
-  #main ~ div:not(#poster-lightbox):not(#contact-modal):not(#svg-templates),
+  /* Keep main content clean, allow our lightboxes and templates */
+  #main ~ div:not(#poster-lightbox):not(#svg-templates),
   #main ~ a,
   #main ~ p,
-  .framer-1p2pwmk-container ~ *,
-  .framer-ahyfn3,
-  .framer-g7oZR,
-  .framer-j4ugry,
-  .framer-jnuwbw,
-  [data-framer-name="Bottom"],
-  [data-framer-name="Border"],
-  #template-overlay,
-  .ssr-variant.hidden-160pjv0,
-  .ssr-variant.hidden-1gmdhm4 {
+  .framer-1p2pwmk-container ~ * {
     display: none !important;
-    height: 0 !important;
-    max-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
+  }
+
+  .framer-soKIl.framer-788ly6, footer.framer-788ly6 {
+    background-color: #111111 !important;
+    padding-bottom: 50px !important;
+    margin-bottom: 0 !important;
     overflow: hidden !important;
-    visibility: hidden !important;
+  }
+
+  /* =========================================================================
+     Project Card Action Buttons (GitHub Logo + Picture 2 Monochrome Arrow)
+     ========================================================================= */
+  .project-actions-row {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    margin-top: 14px !important;
+    z-index: 5 !important;
+  }
+
+  .project-action-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 8px !important;
+    background: #141414 !important;
+    border: 1px solid rgba(250, 247, 243, 0.35) !important;
+    color: #faf7f3 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .project-action-btn:hover {
+    background: #222222 !important;
+    border-color: rgba(250, 247, 243, 0.95) !important;
+    color: #ffffff !important;
+  }
+
+  /* Picture 2 Arrow Style: monochrome, diagonal translate on hover */
+  .project-live-btn:hover {
+    transform: translate(2.5px, -2.5px) !important;
+    box-shadow: -2px 2px 12px rgba(0, 0, 0, 0.6) !important;
+    border-color: #ffffff !important;
+  }
+
+  .project-github-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+    border-color: #ffffff !important;
+  }
+
+  .view-more-projects-trigger-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 9px 18px !important;
+    border-radius: 9999px !important;
+    background: rgba(250, 247, 243, 0.1) !important;
+    border: 1px solid rgba(250, 247, 243, 0.25) !important;
+    color: #faf7f3 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    letter-spacing: 0.01em !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  .view-more-projects-trigger-btn:hover {
+    background: rgba(250, 247, 243, 0.22) !important;
+    border-color: rgba(250, 247, 243, 0.6) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  /* =========================================================================
+     Poster Lightbox Modal (Minimalist: Image + Centered Details Below, NO SIDEBAR)
+     ========================================================================= */
+  #poster-lightbox {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(8, 8, 10, 0.94) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    z-index: 99999999 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0;
+    transition: opacity 0.22s ease !important;
+    box-sizing: border-box !important;
+    padding: 24px !important;
+  }
+
+  #poster-lightbox.lightbox-open {
+    display: flex !important;
+    opacity: 1 !important;
+  }
+
+  #lightbox-close {
+    position: absolute !important;
+    top: 24px !important;
+    right: 28px !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    color: #faf7f3 !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    font-size: 20px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+    z-index: 100000000 !important;
+  }
+
+  #lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: scale(1.08) !important;
+  }
+
+  .poster-lightbox-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 92vw !important;
+    max-height: 92vh !important;
+    box-sizing: border-box !important;
+    animation: posterZoomIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: default !important;
+  }
+
+  @keyframes posterZoomIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  #lightbox-img {
+    max-height: 74vh !important;
+    max-width: 90vw !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 12px !important;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9) !important;
+    display: block !important;
+  }
+
+  .poster-lightbox-details {
+    text-align: center !important;
+    margin-top: 16px !important;
+    max-width: 680px !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  #lightbox-title {
+    font-family: 'Archivo', sans-serif !important;
+    font-size: 21px !important;
+    font-weight: 700 !important;
+    color: #faf7f3 !important;
+    margin: 0 0 6px 0 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  #lightbox-desc {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 13.5px !important;
+    color: rgba(250, 247, 243, 0.72) !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
   }
 </style>
 
@@ -1182,7 +904,7 @@
       line-height: 1.2em;
       color: var(--text);
     }
-  </style></div><!--/$--></div></a><!--/$--></div><!--/$--></div></div><div id="contact" class="framer-1ac7wjl" data-framer-name="Contact"><div class="framer-5sim8l" data-framer-component-type="RichTextContainer" style="--extracted-1eung3n:var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243));--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;transform:none"><h4 class="framer-text framer-styles-preset-1n416j1" data-styles-preset="vfwbnhWq9" dir="auto" style="--framer-text-color:var(--extracted-1eung3n, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))"><span style="display:inline-block;opacity:0.001;filter:blur(10px);transform:translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg)">/Contact</span></h4></div><div class="framer-dd8dt3" data-framer-name="Links"><div class="framer-3drypv" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243));will-change:transform;opacity:0;transform:translateY(10px)"><p class="framer-text framer-styles-preset-8qcqpn" data-styles-preset="e4lWfIAXv" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))"><!--$--><a class="framer-text framer-styles-preset-lfjhkq" data-styles-preset="yaETO81Ao" href="mailto:ishantgupta6094@gmail.com" target="_blank" rel>ishantgupta6094@gmail.com</a><!--/$--></p><div style="margin-top:10px;"><button id="open-contact-modal-btn" type="button" class="contact-footer-trigger-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px;"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg> Send a Message</button></div></div></div></div></div><svg class="framer-3vb2n7" data-framer-component-type="RichTextContainer" viewBox="0 0 1000 135" preserveAspectRatio="none" style="--extracted-r6o4lv:var(--token-57f08e2a-01d8-4ce0-89a5-f6d5488003ee, rgba(250, 247, 243, 0.1));--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;width:100vw;max-width:100vw;height:auto;display:block;overflow:hidden;position:absolute;left:50%;transform:translateX(-50%);bottom:0px;pointer-events:none;margin:0;padding:0">
+  </style></div><!--/$--></div></a><!--/$--></div><!--/$--></div></div><div class="framer-1ac7wjl" data-framer-name="Contact"><div class="framer-5sim8l" data-framer-component-type="RichTextContainer" style="--extracted-1eung3n:var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243));--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;transform:none"><h4 class="framer-text framer-styles-preset-1n416j1" data-styles-preset="vfwbnhWq9" dir="auto" style="--framer-text-color:var(--extracted-1eung3n, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))"><span style="display:inline-block;opacity:0.001;filter:blur(10px);transform:translateX(0px) translateY(10px) scale(1) rotate(0deg) skewX(0deg) skewY(0deg)">/Contact</span></h4></div><div class="framer-dd8dt3" data-framer-name="Links"><div class="framer-3drypv" data-framer-component-type="RichTextContainer" style="--extracted-r6o4lv:var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243));will-change:transform;opacity:0;transform:translateY(10px)"><p class="framer-text framer-styles-preset-8qcqpn" data-styles-preset="e4lWfIAXv" dir="auto" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)))"><!--$--><a class="framer-text framer-styles-preset-lfjhkq" data-styles-preset="yaETO81Ao" href="mailto:ishantgupta6094@gmail.com" target="_blank" rel>ishantgupta6094@gmail.com</a><!--/$--></p></div></div></div></div><svg class="framer-3vb2n7" data-framer-component-type="RichTextContainer" viewBox="0 0 1000 135" preserveAspectRatio="none" style="--extracted-r6o4lv:var(--token-57f08e2a-01d8-4ce0-89a5-f6d5488003ee, rgba(250, 247, 243, 0.1));--framer-link-text-color:rgb(0, 153, 255);--framer-link-text-decoration:underline;width:100vw;max-width:100vw;height:auto;display:block;overflow:hidden;position:absolute;left:50%;transform:translateX(-50%);bottom:0px;pointer-events:none;margin:0;padding:0">
   <text x="0" y="130" textLength="1000" lengthAdjust="spacing" font-family="'Archivo', 'Archivo Placeholder', sans-serif" font-weight="900" font-size="160" fill="var(--token-57f08e2a-01d8-4ce0-89a5-f6d5488003ee, rgba(250, 247, 243, 0.1))" letter-spacing="-0.02em">CYPHER</text>
 </svg></footer></div></div></div><div id="template-overlay"></div><!--/$--></div><script>(()=>{function u(){function n(t,e,i){let r=document.createElement("a");r.href=t,r.target=i,r.rel=e,document.body.appendChild(r),r.click(),r.remove()}function o(t){if(this.dataset.hydrated){this.removeEventListener("click",o);return}t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");if(!e)return;if(/Mac|iPod|iPhone|iPad/u.test(navigator.userAgent)?t.metaKey:t.ctrlKey)return n(e,"","_blank");let r=this.getAttribute("rel")??"",c=this.getAttribute("target")??"";n(e,r,c)}function a(t){if(this.dataset.hydrated){this.removeEventListener("auxclick",o);return}t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");e&&n(e,"","_blank")}function s(t){if(this.dataset.hydrated){this.removeEventListener("keydown",s);return}if(t.key!=="Enter")return;t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");if(!e)return;let i=this.getAttribute("rel")??"",r=this.getAttribute("target")??"";n(e,i,r)}document.querySelectorAll("[data-nested-link]").forEach(t=>{t instanceof HTMLElement&&(t.addEventListener("click",o),t.addEventListener("auxclick",a),t.addEventListener("keydown",s))})}return u})()()</script>
 	<script>!function(){var w="framer_variant";function u(a,r){let e=r.indexOf("#"),t=e===-1?r:r.substring(0,e),o=e===-1?"":r.substring(e),n=t.indexOf("?"),h=n===-1?t:t.substring(0,n),d=n===-1?"":t.substring(n),s=new URLSearchParams(d),m=new URLSearchParams(a);for(let[i,l]of m)s.has(i)||i!==w&&s.append(i,l);let c=s.toString();return c===""?t+o:h+"?"+c+o}var g='div#main a[href^="#"],div#main a[href^="/"],div#main a[href^="."]',f="div#main a[data-framer-preserve-params]",S=document.currentScript?.hasAttribute("data-preserve-internal-params");if(window.location.search&&!navigator.webdriver&&!/bot|-google|google-|yandex|ia_archiver|crawl|spider/iu.test(navigator.userAgent)){let a=document.querySelectorAll(S?`${g},${f}`:f);for(let r of a){let e=u(window.location.search,r.href);r.setAttribute("href",e)}}
@@ -1204,49 +926,6 @@
     
     <!-- End of bodyEnd -->
 
-<script>
-  (function() {
-    function scrollToProjects() {
-      var el = document.getElementById('projects') || 
-               document.querySelector('[data-framer-name="Projects Section"]') ||
-               document.querySelector('.framer-1ut795m');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-
-    function scrollToContact() {
-      var el = document.getElementById('contact') ||
-               document.querySelector('[data-framer-name="Contact"]') ||
-               document.querySelector('footer');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
-
-    document.addEventListener('click', function(e) {
-      if (e.target.closest('#view-more-projects-btn, .project-github-icon-link, .contact-footer-trigger-btn')) return;
-      var target = e.target.closest('a, button, [role="button"], .framer-W6IRo, .framer-ek1g9g-container, .framer-1ddqnub-container');
-      if (target && !target.closest('#view-more-projects-btn') && !target.closest('.project-github-icon-link')) {
-        var text = (target.textContent || target.innerText || '').trim();
-        var href = target.getAttribute('href') || '';
-        if (text === 'Works' || text.startsWith('Works') || href === '#projects' || href.indexOf('TCEKPjkfm') !== -1) {
-          e.preventDefault();
-          e.stopPropagation();
-          scrollToProjects();
-        } else if (text.startsWith('Contact') || href.indexOf('contact') !== -1) {
-          e.preventDefault();
-          e.stopPropagation();
-          if (typeof window.openContactModal === 'function') {
-            window.openContactModal();
-          } else {
-            scrollToContact();
-          }
-        }
-      }
-    }, true);
-  })();
-</script>
 
 
 
@@ -1256,79 +935,20 @@
 
 
 
-<!-- Fullscreen Poster Lightbox Modal -->
-<div id="poster-lightbox" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);z-index:9999999;align-items:center;justify-content:center;flex-direction:column;opacity:0;transition:opacity 0.25s ease;box-sizing:border-box;padding:24px;">
-  <button id="lightbox-close" aria-label="Close" style="position:absolute;top:24px;right:28px;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.2);color:#fff;width:48px;height:48px;border-radius:50%;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s ease;z-index:10000000;" onmouseover="this.style.background='rgba(255,255,255,0.35)';this.style.transform='scale(1.08)'" onmouseout="this.style.background='rgba(255,255,255,0.18)';this.style.transform='scale(1)'">✕</button>
-  <div style="max-width:92vw;max-height:86vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;">
-    <img id="lightbox-img" src="" alt="Poster" style="max-width:100%;max-height:78vh;object-fit:contain;border-radius:12px;box-shadow:0 25px 70px rgba(0,0,0,0.85);display:block;border:1px solid rgba(255,255,255,0.12);">
-    <div style="margin-top:16px;text-align:center;">
-      <h3 id="lightbox-title" style="margin:0;font-family:'Archivo',sans-serif;font-size:20px;font-weight:700;color:#faf7f3;line-height:1.3;letter-spacing:-0.02em;"></h3>
-      <p id="lightbox-desc" style="margin:6px 0 0 0;font-family:'Inter',sans-serif;font-size:14px;color:rgba(250,247,243,0.7);max-width:600px;line-height:1.4;"></p>
+
+<!-- Fullscreen Poster Lightbox Modal with Complete Details -->
+<!-- Fullscreen Minimalist Poster Lightbox (Centered Image + Title & Desc Below) -->
+<div id="poster-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+  <button id="lightbox-close" aria-label="Close modal" type="button">✕</button>
+  <div class="poster-lightbox-container">
+    <img id="lightbox-img" src="" alt="Poster" />
+    <div class="poster-lightbox-details">
+      <h3 id="lightbox-title"></h3>
+      <p id="lightbox-desc"></p>
     </div>
   </div>
 </div>
 
-<!-- Interactive Contact Modal Form -->
-<div id="contact-modal" class="contact-modal-overlay" style="display:none;" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
-  <div class="contact-modal-card">
-    <button id="contact-modal-close" class="contact-modal-close-btn" aria-label="Close Contact Form">✕</button>
-    
-    <div class="contact-modal-header">
-      <div class="contact-badge-pill">
-        <span class="contact-pulse-dot"></span> Available for Opportunities
-      </div>
-      <h2 id="contact-modal-title" class="contact-modal-title">Get in Touch</h2>
-      <p class="contact-modal-desc">
-        Have a project, opportunity, or freelance idea? Send a message directly to my private inbox.
-      </p>
-    </div>
-
-    <!-- Contact Form -->
-    <form id="cypher-contact-form" autocomplete="on">
-      <div class="contact-form-group">
-        <label for="contact-name">Your Name <span style="color:#f87171;">*</span></label>
-        <input type="text" id="contact-name" name="name" required placeholder="e.g. Alex Morgan" autocomplete="name" />
-      </div>
-
-      <div class="contact-form-group">
-        <label for="contact-email">Your Email Address <span style="color:#f87171;">*</span></label>
-        <input type="email" id="contact-email" name="email" required placeholder="name@company.com" autocomplete="email" />
-      </div>
-
-      <div class="contact-form-group">
-        <label for="contact-subject">Subject / Project Type</label>
-        <input type="text" id="contact-subject" name="subject" placeholder="e.g. Web Development, Collaboration, Data Analytics" />
-      </div>
-
-      <div class="contact-form-group">
-        <label for="contact-message">Your Message <span style="color:#f87171;">*</span></label>
-        <textarea id="contact-message" name="message" rows="4" required placeholder="Describe your project, timeline, or idea..."></textarea>
-      </div>
-
-      <div class="contact-privacy-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;opacity:0.85;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-        <span>100% Private — Messages are sent directly to Ishant's personal email.</span>
-      </div>
-
-      <button type="submit" id="contact-submit-btn" class="contact-submit-btn">
-        <span id="contact-submit-text">Send Message</span>
-        <svg id="contact-submit-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-      </button>
-
-      <div class="contact-footer-note">
-        Direct email: <a href="mailto:ishantgupta6094@gmail.com" target="_blank" rel="noopener noreferrer">ishantgupta6094@gmail.com</a>
-      </div>
-    </form>
-
-    <!-- Success State -->
-    <div id="contact-success-state" class="contact-status-state" style="display:none;">
-      <div class="check-icon">✓</div>
-      <h3>Message Delivered!</h3>
-      <p>Thank you for reaching out. Your message has been sent directly to Ishant's inbox. Expect a response soon!</p>
-      <button type="button" id="contact-success-done-btn" class="contact-close-success-btn">Done</button>
-    </div>
-  </div>
-</div>
 
 <script>
   (function() {
@@ -1380,7 +1000,7 @@
     }, true);
 
     // -----------------------------------------------------------------------
-    // 1. Poster Lightbox Modal (ZERO SCROLL JUMP)
+    // 1. Minimalist Poster Lightbox (Centered Image + Title & Desc Below, NO SIDEBAR)
     // -----------------------------------------------------------------------
     var lightbox = document.getElementById('poster-lightbox');
     var lbImg = document.getElementById('lightbox-img');
@@ -1487,34 +1107,42 @@
     };
 
     function openLightbox(src, title, desc) {
+      if (!lightbox) lightbox = document.getElementById('poster-lightbox');
       if (!lightbox) return;
-      lbImg.src = src;
-      lbTitle.textContent = title || '';
-      lbDesc.textContent = desc || '';
-      lightbox.style.display = 'flex';
-      requestAnimationFrame(function() {
-        lightbox.style.opacity = '1';
-      });
+      if (!lbImg) lbImg = document.getElementById('lightbox-img');
+      if (!lbTitle) lbTitle = document.getElementById('lightbox-title');
+      if (!lbDesc) lbDesc = document.getElementById('lightbox-desc');
+
+      if (lbImg) lbImg.src = src;
+      if (lbTitle) lbTitle.textContent = title || 'Graphic Design Artwork';
+      if (lbDesc) lbDesc.textContent = desc || 'Curated high-resolution graphic design composition from the CYPHER visual laboratory.';
+
+      lightbox.classList.add('lightbox-open');
+      document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
+      if (!lightbox) lightbox = document.getElementById('poster-lightbox');
       if (!lightbox) return;
-      lightbox.style.opacity = '0';
+      lightbox.classList.remove('lightbox-open');
+      document.body.style.overflow = '';
       setTimeout(function() {
-        lightbox.style.display = 'none';
-        lbImg.src = '';
+        if (!lightbox.classList.contains('lightbox-open') && lbImg) {
+          lbImg.src = '';
+        }
       }, 250);
     }
 
     if (lbClose) lbClose.addEventListener('click', closeLightbox);
     if (lightbox) {
       lightbox.addEventListener('click', function(e) {
-        if (e.target === lightbox || e.target === lbClose) closeLightbox();
+        if (e.target === lightbox || e.target === lbClose) {
+          closeLightbox();
+        }
       });
-      // Prevent clicks inside the lightbox dialog from closing it
-      var lbDialog = lightbox.querySelector('div');
-      if (lbDialog) {
-        lbDialog.addEventListener('click', function(e) {
+      var lbContainer = lightbox.querySelector('.poster-lightbox-container');
+      if (lbContainer) {
+        lbContainer.addEventListener('click', function(e) {
           e.stopPropagation();
         });
       }
@@ -1524,17 +1152,24 @@
       if (e.key === 'Escape') closeLightbox();
     });
 
-    // Capture clicks on ANY poster or its caption (ZERO SCROLL JUMP)
+    // Capture clicks on Graphic Design Posters ONLY (never project cards!)
     document.addEventListener('click', function(e) {
-      var card = e.target.closest('.framer-1leqxa3 > *') || e.target.closest('.framer-1gwykho-container') || e.target.closest('.framer-bv39vk > *') || e.target.closest('.framer-khup2v-container');
-      if (card && !card.closest('#poster-lightbox')) {
-        var img = card.querySelector('img');
-        if (img) {
+      if (e.target.closest('#poster-lightbox')) return;
+
+      var img = e.target.tagName === 'IMG' ? e.target : e.target.querySelector('img');
+      if (!img) {
+        var posterCard = e.target.closest('.framer-1gwykho-container, .framer-1leqxa3 > *, .framer-bv39vk > *');
+        if (posterCard) img = posterCard.querySelector('img');
+      }
+
+      if (img) {
+        var src = img.currentSrc || img.getAttribute('src') || '';
+        // STRICT GATE: Must be a thoughts poster (contains '/thoughts/' or poster name), NOT a project!
+        if (src.indexOf('/thoughts/') !== -1 || src.includes('batman') || src.includes('itachi') || src.includes('arcane') || src.includes('solo-leveling') || src.includes('miles-morales')) {
           e.preventDefault();
           e.stopPropagation();
           e.stopImmediatePropagation();
 
-          var src = img.currentSrc || img.getAttribute('src') || '';
           var title = '';
           var desc = '';
 
@@ -1547,10 +1182,11 @@
           }
 
           if (!title) {
-            var titleEl = card.querySelector('h3, [data-styles-preset="sJTxBXgD6"] p, [data-styles-preset="rnettFmGc"] p');
-            var descEl = card.querySelector('.framer-4wbxei p, [data-styles-preset="e4lWfIAXv"] p');
-            title = titleEl ? titleEl.textContent.trim() : (img.alt || 'Graphic Design Poster');
-            desc = descEl ? descEl.textContent.trim() : '';
+            var cardEl = img.closest('.framer-1gwykho-container, .framer-1leqxa3 > *, .framer-bv39vk > *');
+            var titleEl = cardEl ? cardEl.querySelector('h3, [data-styles-preset="sJTxBXgD6"] p, [data-styles-preset="rnettFmGc"] p') : null;
+            var descEl = cardEl ? cardEl.querySelector('.framer-4wbxei p, [data-styles-preset="e4lWfIAXv"] p') : null;
+            title = titleEl ? titleEl.textContent.trim() : (img.alt || 'Graphic Design Artwork');
+            desc = descEl ? descEl.textContent.trim() : 'Curated high-resolution graphic design composition from the CYPHER visual laboratory.';
           }
 
           openLightbox(src, title, desc);
@@ -1560,197 +1196,172 @@
     }, true);
 
     // -----------------------------------------------------------------------
-    // 2. Project Card GitHub Icon Next to Titles
+    // 2. Project Action Buttons (GitHub Repo + Picture 2 Monochrome Arrow Live Site)
     // -----------------------------------------------------------------------
-    var githubSvgIcon = '<svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor" style="display:block;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>';
-
-    var projectRepoMap = {
-      'AI Career Copilot': 'https://github.com/Ishant6565/AI-Career-Copilot',
-      'GenAI DevAgent': 'https://github.com/Ishant6565/GenAI-Developer-Agent',
-      'The Daily Grandmaster': 'https://github.com/Ishant6565/Chess-AI-Engine',
-      'Mindloop (Mental Health AI)': 'https://github.com/Ishant6565/Mental-Health-Score-ML',
-      'Mental Health Signal': 'https://github.com/Ishant6565/Mental-Health-Score-ML',
-      'ARCADEX': 'https://github.com/Ishant6565/ARCADEX.git',
-      'Stock Analysis Web App': 'https://github.com/Ishant6565/Stock-Market-Analysis'
+    var projectDataMap = {
+      'ai career copilot': {
+        repo: 'https://github.com/Ishant6565/Product-Ai-Career-Copilot.git',
+        live: 'https://product-ai-career-copilot.vercel.app/'
+      },
+      'genai devagent': {
+        repo: 'https://github.com/Ishant6565/GenAI-Software-Developer-Agent.git',
+        live: 'https://gen-ai-software-developer-agent.vercel.app/'
+      },
+      'the daily grandmaster': {
+        repo: 'https://github.com/Ishant6565/CHESS-AI',
+        live: 'https://chess-tau-ashen.vercel.app/'
+      },
+      'chess ai': {
+        repo: 'https://github.com/Ishant6565/CHESS-AI',
+        live: 'https://chess-tau-ashen.vercel.app/'
+      },
+      'mindloop': {
+        repo: 'https://github.com/Ishant6565/Mental-Health-Score-ML.git',
+        live: 'https://mental-health-score-ml-nine.vercel.app/'
+      },
+      'mental health': {
+        repo: 'https://github.com/Ishant6565/Mental-Health-Score-ML.git',
+        live: 'https://mental-health-score-ml-nine.vercel.app/'
+      },
+      'arcadex': {
+        repo: 'https://github.com/Ishant6565/ARCADEX.git',
+        live: 'https://chunin-exam.vercel.app/'
+      },
+      'game hub': {
+        repo: 'https://github.com/Ishant6565/GAMEHUB',
+        live: 'https://kakashi-hatake-ecru.vercel.app/'
+      },
+      'gamehub': {
+        repo: 'https://github.com/Ishant6565/GAMEHUB',
+        live: 'https://kakashi-hatake-ecru.vercel.app/'
+      },
+      'stock pulse': {
+        repo: 'https://github.com/Ishant6565/GAMEHUB',
+        live: 'https://kakashi-hatake-ecru.vercel.app/'
+      },
+      'stock analysis': {
+        repo: 'https://github.com/Ishant6565/GAMEHUB',
+        live: 'https://kakashi-hatake-ecru.vercel.app/'
+      },
+      'breedvision': {
+        repo: 'https://github.com/Ishant6565/SIH2025-BreedVision-AI',
+        live: 'https://breed-vision-ai-taupe.vercel.app/'
+      },
+      'breed vision': {
+        repo: 'https://github.com/Ishant6565/SIH2025-BreedVision-AI',
+        live: 'https://breed-vision-ai-taupe.vercel.app/'
+      },
+      '3d personal portfolio': {
+        repo: 'https://github.com/Ishant6565/portfolio',
+        live: 'https://portfoliowebsite-omega-smoky.vercel.app/'
+      },
+      'personal portfolio': {
+        repo: 'https://github.com/Ishant6565/portfolio',
+        live: 'https://portfoliowebsite-omega-smoky.vercel.app/'
+      },
+      'portfolio': {
+        repo: 'https://github.com/Ishant6565/portfolio',
+        live: 'https://portfoliowebsite-omega-smoky.vercel.app/'
+      },
+      'chat app': {
+        repo: 'https://github.com/Ishant6565/chat-app',
+        live: 'https://hidden-leaf-village-udab.onrender.com/'
+      },
+      'cypher project web': {
+        repo: 'https://github.com/Ishant6565/Cypher-project-web.git',
+        live: 'https://cypher-red-iota.vercel.app/'
+      }
     };
 
-    function attachGithubLogos() {
-      var titleHeaders = document.querySelectorAll('.framer-1a1g2uv h3, .framer-v4eg3f h3, [data-framer-name="Title & Description"] h3, [data-framer-name="Project Card"] h3');
-      titleHeaders.forEach(function(h3) {
-        if (h3.querySelector('.project-github-icon-link')) return;
-        var text = h3.textContent.trim();
-        var repoUrl = '';
-        for (var key in projectRepoMap) {
-          if (text.indexOf(key) !== -1 || key.indexOf(text) !== -1) {
-            repoUrl = projectRepoMap[key];
-            break;
-          }
-        }
-        if (!repoUrl) {
-          var cardLink = h3.closest('a');
-          if (cardLink && cardLink.href && cardLink.href.includes('github.com')) {
-            repoUrl = cardLink.href;
-          }
-        }
-        if (repoUrl) {
-          var ghLink = document.createElement('a');
-          ghLink.href = repoUrl;
-          ghLink.target = '_blank';
-          ghLink.rel = 'noopener noreferrer';
-          ghLink.className = 'project-github-icon-link';
-          ghLink.title = 'View Source Code on GitHub (' + text + ')';
-          ghLink.setAttribute('aria-label', 'View Source Code on GitHub (' + text + ')');
-          ghLink.innerHTML = githubSvgIcon;
-          ghLink.addEventListener('click', function(evt) {
-            evt.stopPropagation();
-          });
-          h3.style.display = 'inline-flex';
-          h3.style.alignItems = 'center';
-          h3.appendChild(ghLink);
-        }
+    function getProjectInfoForCard(card) {
+      var h3 = card.querySelector('h3, h2, [data-styles-preset="sJTxBXgD6"]');
+      var titleText = h3 ? h3.textContent.trim().toLowerCase() : '';
+      var sortedKeys = Object.keys(projectDataMap).sort(function(a, b) {
+        return b.length - a.length;
       });
-    }
 
-    function attachFooterContactButton() {
-      var emailLink = document.querySelector('a[href^="mailto:ishantgupta6094@gmail.com"]');
-      if (emailLink && !document.getElementById('open-contact-modal-btn')) {
-        var parent = emailLink.closest('p') || emailLink.parentElement;
-        if (parent && parent.parentElement) {
-          var container = document.createElement('div');
-          container.style.marginTop = '10px';
-          container.innerHTML = '<button id="open-contact-modal-btn" type="button" class="contact-footer-trigger-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px;"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg> Send a Message</button>';
-          parent.parentElement.appendChild(container);
-          var btn = container.querySelector('#open-contact-modal-btn');
-          if (btn) {
-            btn.addEventListener('click', function(e) {
-              e.preventDefault();
-              e.stopPropagation();
-              if (typeof window.openContactModal === 'function') {
-                window.openContactModal();
-              }
-            });
+      if (titleText) {
+        for (var i = 0; i < sortedKeys.length; i++) {
+          var k = sortedKeys[i];
+          if (titleText.indexOf(k) !== -1 || k.indexOf(titleText) !== -1) {
+            return projectDataMap[k];
           }
         }
       }
+
+      var text = (card.textContent || '').trim().toLowerCase();
+      for (var j = 0; j < sortedKeys.length; j++) {
+        var key = sortedKeys[j];
+        if (text.indexOf(key) !== -1) {
+          return projectDataMap[key];
+        }
+      }
+
+      return null;
     }
 
-    // -----------------------------------------------------------------------
-    // Attach 4 Extra Projects into Grid & View More Projects Inline Toggle
-    // -----------------------------------------------------------------------
-    var extraProjectsList = [
-      {
-        title: 'BreedVision AI',
-        sub: 'AUTONOMOUS CATTLE BREED RECOGNITION • SIH 2025',
-        img: '/images/project_breedvision_ai.png',
-        url: 'https://github.com/Ishant6565/SIH2025-BreedVision-AI.git'
-      },
-      {
-        title: '3D Personal Portfolio',
-        sub: 'INTERACTIVE 3D AVATAR & LIGHTING • Three.js & React',
-        img: '/images/project_portfolio_3d.png',
-        url: 'https://github.com/Ishant6565/portfolio.git'
-      },
-      {
-        title: 'Chatty Minimal Real-Time App',
-        sub: 'REAL-TIME WEBSOCKET MESSAGING • Socket.io & React',
-        img: '/images/project_chat_app.png',
-        url: 'https://github.com/Ishant6565/chatty-minimal-app.git'
-      },
-      {
-        title: 'Cypher Project Web',
-        sub: 'EXPERIMENTAL LAB & AI AGENTS • Next.js & Framer',
-        img: '/images/project_cypher_web.png',
-        url: 'https://github.com/Ishant6565/Cypher-project-web.git'
-      }
-    ];
+    function attachProjectActionButtons() {
+      // Find cards on Homepage and on /work
+      var cards = document.querySelectorAll('[data-framer-name="Project Card"], .framer-khup2v-container');
+      cards.forEach(function(card) {
+        // Skip if already has actions row
+        if (card.querySelector('.project-actions-row')) return;
 
-    var isProjectsExpanded = false;
+        var info = getProjectInfoForCard(card);
+        if (!info) return;
 
-    function renderExtraProjectsIntoGrid() {
-      var cards = Array.from(document.querySelectorAll('[data-framer-name="Project Card"]'));
-      if (cards.length === 0) return;
-      var firstCard = cards[0];
-      var grid = firstCard.parentElement ? firstCard.parentElement.parentElement : null;
-      if (!grid) return;
+        // Ensure card main link points directly to Live Website
+        var aTag = card.tagName === 'A' ? card : card.querySelector('a');
+        if (aTag) {
+          aTag.href = info.live;
+          aTag.target = '_blank';
+          aTag.rel = 'noopener noreferrer';
+        }
 
-      extraProjectsList.forEach(function(p, index) {
-        if (grid.querySelector('[data-project-title="' + p.title + '"]')) return;
-        var cardWrap = document.createElement('div');
-        cardWrap.className = 'framer-19xgbbo-container cypher-extra-project-card ' + (isProjectsExpanded ? 'cypher-card-visible' : 'cypher-card-hidden');
-        cardWrap.setAttribute('data-project-title', p.title);
-        cardWrap.innerHTML = [
-          '<a class="framer-RX6DT framer-zr0hx framer-cZC2Y framer-32eq8k framer-v-32eq8k framer-of3aj6" data-framer-name="Project Card" href="' + p.url + '" target="_blank" rel="noopener noreferrer" style="background-color: rgba(255, 255, 255, 0); width: 100%; opacity: 1; text-decoration: none; display: flex; flex-direction: column;">',
-          '  <div class="framer-q8laq2" data-framer-name="Image Wrap" style="border-radius: 20px; opacity: 1; overflow: hidden; position: relative;">',
-          '    <div class="framer-k1u9sl" data-framer-name="Image" style="border-radius: 20px; opacity: 1; position: relative; width: 100%; height: 100%;">',
-          '      <div data-framer-background-image-wrapper="true" style="position: absolute; border-radius: inherit; inset: 0px;">',
-          '        <img decoding="auto" width="1160" height="800" src="' + p.img + '" alt="' + p.title + '" style="display: block; width: 100%; height: 100%; border-radius: inherit; object-position: top center; object-fit: cover;">',
-          '      </div>',
-          '    </div>',
-          '  </div>',
-          '  <div class="framer-1a1g2uv" data-framer-name="Title &amp; Description" style="opacity: 1;">',
-          '    <div class="framer-v4eg3f" data-framer-component-type="RichTextContainer" style="--framer-link-text-color: rgb(0, 153, 255); transform: none; opacity: 1;">',
-          '      <h3 class="framer-text framer-styles-preset-jtzju9" data-styles-preset="sJTxBXgD6" dir="auto" style="display: inline-flex; align-items: center;">',
-          '        ' + p.title,
-          '        <span class="project-github-icon-link" title="View Source Code on GitHub (' + p.title + ')" aria-label="View Source Code on GitHub (' + p.title + ')">',
-          '          <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor" style="display:block;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>',
-          '        </span>',
-          '      </h3>',
-          '    </div>',
-          '    <div class="framer-1eobfit" data-framer-component-type="RichTextContainer" style="--framer-link-text-color: rgb(0, 153, 255); transform: none; opacity: 1;">',
-          '      <p class="framer-text framer-styles-preset-18hoqs7" data-styles-preset="JW7_JT3Q0" dir="auto">' + p.sub + '</p>',
-          '    </div>',
-          '  </div>',
+        // Find insertion point
+        var targetContainer = card.querySelector('.framer-1a1g2uv, [data-framer-name="Title & Description"]') || card;
+
+        var row = document.createElement('div');
+        row.className = 'project-actions-row';
+        row.innerHTML = [
+          '<a class="project-action-btn project-github-btn" href="' + info.repo + '" target="_blank" rel="noopener noreferrer" title="View Source on GitHub" aria-label="View Source on GitHub">',
+          '  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">',
+          '    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>',
+          '  </svg>',
+          '</a>',
+          '<a class="project-action-btn project-live-btn" href="' + info.live + '" target="_blank" rel="noopener noreferrer" title="Visit Live Website" aria-label="Visit Live Website">',
+          '  <svg class="project-arrow-svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">',
+          '    <line x1="7" y1="17" x2="17" y2="7"></line>',
+          '    <polyline points="7 7 17 7 17 17"></polyline>',
+          '  </svg>',
           '</a>'
-        ].join('\n');
-        grid.appendChild(cardWrap);
-      });
-    }
+        ].join('');
 
-    function toggleExtraProjects(expand) {
-      if (typeof expand === 'boolean') {
-        isProjectsExpanded = expand;
-      } else {
-        isProjectsExpanded = !isProjectsExpanded;
-      }
-
-      // renderExtraProjectsIntoGrid(); (navigates to /work instead)
-
-      var extraCards = document.querySelectorAll('.cypher-extra-project-card');
-      extraCards.forEach(function(card, idx) {
-        if (isProjectsExpanded) {
-          card.classList.remove('cypher-card-hidden');
-          card.classList.add('cypher-card-visible');
-          card.style.animationDelay = (idx * 0.08) + 's';
-        } else {
-          card.classList.remove('cypher-card-visible');
-          card.classList.add('cypher-card-hidden');
-        }
-      });
-
-      var btn = document.getElementById('view-more-projects-btn');
-      if (btn) {
-        if (isProjectsExpanded) {
-          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:6px;"><polyline points="18 15 12 9 6 15"></polyline></svg> Show Less ↑';
-          btn.title = 'Collapse extra projects';
-          var firstExtra = document.querySelector('.cypher-extra-project-card');
-          if (firstExtra) {
-            setTimeout(function() {
-              firstExtra.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 50);
-          }
-        } else {
-          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:6px;"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg> View More Projects (4) ↓';
-          btn.title = 'Explore additional projects';
-          var h2 = Array.from(document.querySelectorAll('h2')).find(function(el) {
-            return (el.innerText || el.textContent || '').includes('Featured Projects');
+        // Handle clicks cleanly
+        var githubBtn = row.querySelector('.project-github-btn');
+        if (githubBtn) {
+          githubBtn.addEventListener('click', function(ev) {
+            ev.stopPropagation();
           });
-          if (h2) {
-            h2.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
         }
-      }
+        var liveBtn = row.querySelector('.project-live-btn');
+        if (liveBtn) {
+          liveBtn.addEventListener('click', function(ev) {
+            ev.stopPropagation();
+          });
+        }
+
+        // Clean up legacy arrow row if present
+        var oldArrow = card.querySelector('.project-arrow-row');
+        if (oldArrow) oldArrow.remove();
+
+        targetContainer.appendChild(row);
+      });
     }
 
+    // -----------------------------------------------------------------------
+    // View More Projects Button on Homepage
+    // -----------------------------------------------------------------------
     function attachViewMoreProjectsButton() {
       var container = document.querySelector('.framer-100uyal, [data-framer-name="Title & Button"]');
       if (!container) {
@@ -1765,9 +1376,7 @@
 
       var btn = document.getElementById('view-more-projects-btn');
       if (btn) {
-        if (btn.parentElement === container) {
-          return;
-        }
+        if (btn.parentElement === container) return;
         btn.remove();
       }
 
@@ -1776,7 +1385,7 @@
       btn.href = '/work';
       btn.className = 'view-more-projects-trigger-btn';
       btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:6px;"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg> View More Projects ↗';
-      btn.title = 'View all projects on dedicated page';
+      btn.title = 'View all 10 projects on dedicated page';
 
       btn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -1785,13 +1394,10 @@
 
       container.appendChild(btn);
     }
-    window.attachViewMoreProjectsButton = attachViewMoreProjectsButton;
 
     function runEnhancements() {
-      attachGithubLogos();
-      attachFooterContactButton();
+      attachProjectActionButtons();
       attachViewMoreProjectsButton();
-      // renderExtraProjectsIntoGrid(); (navigates to /work)
     }
 
     runEnhancements();
@@ -1799,7 +1405,7 @@
     observer.observe(document.body, { childList: true, subtree: true });
 
     // -----------------------------------------------------------------------
-    // Works Nav Button Smooth Scroll
+    // Navigation Smooth Scroll: Works & Contact
     // -----------------------------------------------------------------------
     function scrollToProjects() {
       var el = document.getElementById('projects') || 
@@ -1810,10 +1416,27 @@
       }
     }
 
+    function scrollToContact() {
+      // Smoothly scroll directly to the "Let's talk." section so user fills form there
+      var el = document.querySelector('[data-framer-name="Contact Section"]') ||
+               document.querySelector('form') ||
+               document.getElementById('contact') ||
+               document.getElementById('contact-section');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Scroll to contact if page loads with #contact hash
+    if (window.location.hash === '#contact' || window.location.hash === '#contact-section') {
+      setTimeout(scrollToContact, 500);
+      setTimeout(scrollToContact, 1500);
+    }
+
     document.addEventListener('click', function(e) {
-      if (e.target.closest('#view-more-projects-btn, .project-github-icon-link, .contact-footer-trigger-btn')) return;
+      if (e.target.closest('#view-more-projects-btn, .project-action-btn')) return;
       var target = e.target.closest('a, button, [role="button"], .framer-W6IRo, .framer-ek1g9g-container, .framer-1ddqnub-container');
-      if (target && !target.closest('.project-github-icon-link') && !target.closest('#view-more-projects-btn')) {
+      if (target && !target.closest('#view-more-projects-btn') && !target.closest('.project-action-btn')) {
         var text = (target.textContent || target.innerText || '').trim();
         var href = target.getAttribute('href') || '';
         if (text === 'Works' || text.startsWith('Works') || href === '#projects' || href.indexOf('TCEKPjkfm') !== -1) {
@@ -1821,154 +1444,31 @@
           e.stopPropagation();
           scrollToProjects();
         } else if (text.startsWith('Contact') || href.indexOf('contact') !== -1) {
+          // NO POPUP! Smooth scroll straight to the "Let's talk" section to fill the inline form
           e.preventDefault();
           e.stopPropagation();
-          openContactModal();
+          var isHome = window.location.pathname === '/' || window.location.pathname === '' || window.location.pathname.endsWith('index.html');
+          if (isHome) {
+            scrollToContact();
+          } else {
+            window.location.href = '/#contact';
+          }
         }
       }
     }, true);
 
-    // 5. Contact Modal Form & AJAX Delivery Logic
     // -----------------------------------------------------------------------
-    var contactModal = document.getElementById('contact-modal');
-    var contactForm = document.getElementById('cypher-contact-form');
-    var contactSuccessState = document.getElementById('contact-success-state');
-    var contactSubmitBtn = document.getElementById('contact-submit-btn');
-    var contactSubmitText = document.getElementById('contact-submit-text');
-    var contactModalClose = document.getElementById('contact-modal-close');
-    var contactSuccessDoneBtn = document.getElementById('contact-success-done-btn');
-
-    function openContactModal() {
-      if (!contactModal) return;
-      contactModal.style.display = 'flex';
-      requestAnimationFrame(function() {
-        contactModal.classList.add('active');
-      });
-      document.body.style.overflow = 'hidden';
-      var nameInput = document.getElementById('contact-name');
-      if (nameInput) {
-        setTimeout(function() { nameInput.focus(); }, 160);
-      }
-    }
-    window.openContactModal = openContactModal;
-
-    function closeContactModal() {
-      if (!contactModal) return;
-      contactModal.classList.remove('active');
-      setTimeout(function() {
-        contactModal.style.display = 'none';
-        document.body.style.overflow = '';
-      }, 250);
-    }
-    window.closeContactModal = closeContactModal;
-
-    if (contactModalClose) {
-      contactModalClose.addEventListener('click', closeContactModal);
-    }
-
-    if (contactSuccessDoneBtn) {
-      contactSuccessDoneBtn.addEventListener('click', function() {
-        closeContactModal();
-        setTimeout(function() {
-          if (contactSuccessState) contactSuccessState.style.display = 'none';
-          if (contactForm) contactForm.style.display = 'block';
-        }, 300);
-      });
-    }
-
-    if (contactModal) {
-      contactModal.addEventListener('click', function(e) {
-        if (e.target === contactModal) {
-          closeContactModal();
-        }
-      });
-      var card = contactModal.querySelector('.contact-modal-card');
-      if (card) {
-        card.addEventListener('click', function(e) {
-          e.stopPropagation();
-        });
-      }
-    }
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && contactModal && contactModal.classList.contains('active')) {
-        closeContactModal();
-      }
-    });
-
-    // Capture clicks on footer button or any open contact trigger
-    document.addEventListener('click', function(e) {
-      var trigger = e.target.closest('#open-contact-modal-btn, .contact-footer-trigger-btn');
-      if (trigger) {
-        e.preventDefault();
-        e.stopPropagation();
-        openContactModal();
-      }
-    });
-
-    // Form Submission Handling
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var nameVal = (document.getElementById('contact-name').value || '').trim();
-        var emailVal = (document.getElementById('contact-email').value || '').trim();
-        var subjectVal = (document.getElementById('contact-subject').value || '').trim();
-        var messageVal = (document.getElementById('contact-message').value || '').trim();
-
-        if (!nameVal || !emailVal || !messageVal) {
-          alert('Please fill out all required fields.');
-          return;
-        }
-
-        contactSubmitBtn.disabled = true;
-        contactSubmitText.textContent = 'Sending Message...';
-
-        fetch('https://formsubmit.co/ajax/ishantgupta6094@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({
-            name: nameVal,
-            email: emailVal,
-            _subject: subjectVal ? ('[CYPHER Portfolio] ' + subjectVal) : ('[CYPHER Portfolio] New Inquiry from ' + nameVal),
-            message: messageVal,
-            _template: 'table',
-            _captcha: 'false'
-          })
-        })
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(data) {
-          contactSubmitBtn.disabled = false;
-          contactSubmitText.textContent = 'Send Message';
-          contactForm.style.display = 'none';
-          contactSuccessState.style.display = 'block';
-          contactForm.reset();
-        })
-        .catch(function(err) {
-          console.error('Contact submit error:', err);
-          contactSubmitBtn.disabled = false;
-          contactSubmitText.textContent = 'Send Message';
-          // Fallback gracefully via mailto if network error
-          alert('Direct connection interrupted. Opening your email app to send to ishantgupta6094@gmail.com directly.');
-          window.location.href = 'mailto:ishantgupta6094@gmail.com?subject=' + encodeURIComponent(subjectVal || 'Project Inquiry from ' + nameVal) + '&body=' + encodeURIComponent('From: ' + nameVal + ' (' + emailVal + ')\n\n' + messageVal);
-        });
-      });
-    }
-
     // Intercept inline "Let's talk." form so submissions go directly to Ishant's email
+    // -----------------------------------------------------------------------
     document.addEventListener('submit', function(e) {
       var f = e.target;
-      if (f && f.id !== 'cypher-contact-form') {
+      if (f) {
         e.preventDefault();
         e.stopPropagation();
 
         var nameInput = f.querySelector('input[name="Name"], input[placeholder*="name"]');
         var emailInput = f.querySelector('input[name="Email"], input[type="email"], input[placeholder*="email"]');
-        var msgInput = f.querySelector('textarea');
+        var msgInput = f.querySelector('textarea, [name="message"], [placeholder*="project"]');
         var submitBtn = f.querySelector('button[type="submit"], button');
 
         var name = (nameInput ? nameInput.value : '').trim();
@@ -2019,11 +1519,10 @@
             submitBtn.disabled = false;
             submitBtn.innerHTML = origBtnHtml;
           }
-          window.location.href = 'mailto:ishantgupta6094@gmail.com?subject=' + encodeURIComponent('Project Inquiry from ' + name) + '&body=' + encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message);
+          window.location.href = 'mailto:ishantgupta6094@gmail.com?subject=' + encodeURIComponent('Project Inquiry from ' + name) + '&body=' + encodeURIComponent('From: ' + name + ' (' + email + ') - ' + message);
         });
       }
     }, true);
   })();
 </script>
-
 </body>
