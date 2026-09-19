@@ -176,10 +176,10 @@ export const portfolioData = {
     subheading: "Have a project or need help? Fill out the form, and we'll get back to you soon.",
     email: "ishantgupta6094@gmail.com",
     socials: [
-      { name: "X (Twitter)", href: "https://x.com/", handle: "@majd" },
-      { name: "Instagram", href: "https://www.instagram.com/", handle: "@majd.builds" },
-      { name: "LinkedIn", href: "https://www.linkedin.com/", handle: "majd-engineer" },
-      { name: "YouTube", href: "https://www.youtube.com/", handle: "@majd-creations" }
+      { name: "X (Twitter)", href: "https://x.com/" },
+      { name: "Instagram", href: "https://www.instagram.com/" },
+      { name: "LinkedIn", href: "https://www.linkedin.com/" },
+      { name: "YouTube", href: "https://www.youtube.com/" }
     ]
   },
 
