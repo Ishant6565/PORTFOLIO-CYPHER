@@ -21,7 +21,7 @@ const myConfig = {
   
   // Bio Section
   greeting: "Hey!",
-  bioIntro: "I’m Ishant, an engineer based in Kolkata, India, building intelligent systems and high-performance web experiences.",
+  bioIntro: "I’m Majd, a builder based in Syria, currently working on Templyo, a platform for high-quality Framer templates.",
   bioParagraph1: "I’m a software engineer and Framer creator with a strong focus on building modern, scalable, and conversion-driven web experiences.",
   bioParagraph2: "Over the years, I’ve created and shipped multiple SaaS products and Framer templates used by global customers, helping them launch faster.",
   
