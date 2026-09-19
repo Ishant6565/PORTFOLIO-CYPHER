@@ -633,6 +633,239 @@
     transform: scale(1.12) !important;
   }
 
+  /* View More Projects Trigger Button */
+  .view-more-projects-trigger-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #111111 !important;
+    color: #faf7f3 !important;
+    font-family: 'Archivo', sans-serif !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    padding: 8px 18px !important;
+    border-radius: 9999px !important;
+    border: 1px solid rgba(250, 247, 243, 0.2) !important;
+    cursor: pointer !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+    vertical-align: middle !important;
+    margin-left: 14px !important;
+  }
+  .view-more-projects-trigger-btn:hover {
+    background: #222222 !important;
+    border-color: rgba(250, 247, 243, 0.45) !important;
+    transform: translateY(-2px) scale(1.03) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  /* More Projects Showcase Modal */
+  #more-projects-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 9999998;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 24px 16px;
+    box-sizing: border-box;
+  }
+  #more-projects-modal.active {
+    display: flex;
+    opacity: 1;
+  }
+  .more-projects-dialog {
+    background: #0d0d0d;
+    border: 1px solid rgba(250, 247, 243, 0.14);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 1160px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.95);
+    position: relative;
+    box-sizing: border-box;
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+  }
+  #more-projects-modal.active .more-projects-dialog {
+    transform: translateY(0) scale(1);
+  }
+  .more-projects-header {
+    padding: 24px 30px 18px;
+    border-bottom: 1px solid rgba(250, 247, 243, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .more-projects-title {
+    font-family: 'Archivo', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #faf7f3;
+    margin: 0;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .more-projects-title-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 9px;
+    border-radius: 9999px;
+    background: rgba(250, 247, 243, 0.1);
+    color: rgba(250, 247, 243, 0.7);
+    border: 1px solid rgba(250, 247, 243, 0.12);
+  }
+  .more-projects-close-btn {
+    background: rgba(250, 247, 243, 0.08);
+    border: 1px solid rgba(250, 247, 243, 0.14);
+    color: #faf7f3;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+  .more-projects-close-btn:hover {
+    background: rgba(250, 247, 243, 0.22);
+    transform: scale(1.08);
+  }
+  .more-projects-body {
+    padding: 24px 30px 30px;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    box-sizing: border-box;
+  }
+  @media (max-width: 860px) {
+    .more-projects-body {
+      grid-template-columns: 1fr;
+      padding: 18px;
+      gap: 18px;
+    }
+    .more-projects-header {
+      padding: 18px 20px;
+    }
+  }
+  .project-showcase-card {
+    background: #151515;
+    border: 1px solid rgba(250, 247, 243, 0.1);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .project-showcase-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(250, 247, 243, 0.26);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  }
+  .project-showcase-img-wrap {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+  }
+  .project-showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .project-showcase-card:hover .project-showcase-img {
+    transform: scale(1.04);
+  }
+  .project-showcase-content {
+    padding: 20px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .project-showcase-tags {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .project-showcase-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(250, 247, 243, 0.65);
+    background: rgba(250, 247, 243, 0.06);
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(250, 247, 243, 0.08);
+  }
+  .project-showcase-card-title {
+    font-family: 'Archivo', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #faf7f3;
+    margin: 0 0 8px;
+    letter-spacing: -0.015em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .project-showcase-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    color: rgba(250, 247, 243, 0.65);
+    line-height: 1.5;
+    margin: 0 0 18px;
+    flex: 1;
+  }
+  .project-showcase-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #faf7f3;
+    color: #111;
+    font-family: 'Archivo', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+  }
+  .project-showcase-action-btn:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(250, 247, 243, 0.25);
+  }
+
+
   /* 4. CYPHER Watermark: Flush to Floor Edge-to-Edge */
   .framer-soKIl.framer-788ly6,
   footer.framer-788ly6 {
@@ -679,7 +912,7 @@
     
     <!-- End of bodyStart -->
 	
-	<div id="main" data-framer-hydrate-v2="{&quot;routeId&quot;:&quot;XQuJCztg5&quot;,&quot;localeId&quot;:&quot;default&quot;,&quot;breakpoints&quot;:[{&quot;hash&quot;:&quot;1y5deqo&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 1280px)&quot;},{&quot;hash&quot;:&quot;1gqtqv1&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 810px) and (max-width: 1279.98px)&quot;},{&quot;hash&quot;:&quot;eh3b30&quot;,&quot;mediaQuery&quot;:&quot;(max-width: 809.98px)&quot;},{&quot;hash&quot;:&quot;egmbj8&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 1280px)&quot;},{&quot;hash&quot;:&quot;160pjv0&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 810px) and (max-width: 1279.98px)&quot;},{&quot;hash&quot;:&quot;1gmdhm4&quot;,&quot;mediaQuery&quot;:&quot;(max-width: 809.98px)&quot;}]}" data-framer-ssr-released-at="2026-09-09T08:45:49.729Z" data-framer-page-optimized-at="2026-09-12T00:17:28.289Z" data-framer-generated-page><!--$--><style  data-framer-html-style>:root body { background: var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)); }</style><div class="framer-zpn31 framer-egmbj8" data-layout-template="true" style="min-height:100vh;width:auto"><div class="framer-bcxrl8-container"><!--$--><div style="width:100%;height:100%;background-size:161px;background-repeat:repeat;background-image:url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png');opacity:0.04;border-radius:0"></div><!--/$--></div><div class="framer-foun8u-container"><!--$--><div></div><!--/$--></div><!--$--><a class="framer-1u5lwqx framer-3fmz9g" data-framer-name="Navigation Link" href="/resume.pdf" target="_blank" download="Ishant_Gupta_Resume.pdf" title="Download Ishant Gupta Resume"><div class="framer-5kezok-container"><div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;overflow:hidden;padding:8px 16px 8px 16px;box-sizing:border-box"><p class="rolling-text-inner-R6qelp"><span style="display:block;font-family:&quot;Archivo&quot;, &quot;Archivo Placeholder&quot;, sans-serif;font-size:16px;font-style:normal;font-weight:500;letter-spacing:-0.02em;line-height:1.2em;transform:none">D</span><span style="display:block;font-family:&quot;Archivo&quot;, &quot;Archivo Placeholder&quot;, sans-serif;font-size:16px;font-style:normal;font-weight:500;letter-spacing:-0.02em;line-height:1.2em;transform:none">o</span><span style="display:block;font-family:&quot;Archivo&quot;, &quot;Archivo Placeholder&quot;, sans-serif;font-size:16px;font-style:normal;font-weight:500;letter-spacing:-0.02em;line-height:1.2em;transform:none">w</span><span style="display:block;font-family:&quot;Archivo&quot;, &quot;Archivo Placeholder&quot;, sans-serif;font-size:16px;font-style:normal;font-weight:500;letter-spacing:-0.02em;line-height:1.2em;transform:none">n</span><span style="display:block;font-family:&quot;Archivo&quot;, &quot;Archivo Placeholder&quot;, sans-serif;font-size:16px;font-style:normal;font-weight:500;letter-spacing:-0.02em;line-height:1.2em;transform:none">l</span><span style="display:block;font-family:&quot;Archivo&quot;, &quot;Archivo Placeholder&quot;, sans-serif;font-size:16px;font-style:normal;font-weight:500;letter-spacing:-0.02em;line-height:1.2em;transform:none">o</span><span style="display:block;font-family:&quot;Archivo&quot;, &quot;Archivo Placeholder&quot;, sans-serif;font-size:16px;font-style:normal;font-weight:500;letter-spacing:-0.02em;line-height:1.2em;transform:none">a</span><span style="display:block;font-family:&quot;Archivo&quot;, &quot;Archivo Placeholder&quot;, sans-serif;font-size:16px;font-style:normal;font-weight:500;letter-spacing:-0.02em;line-height:1.2em;transform:none">d</span><span style="display:block;font-family:&quot;Archivo&quot;, &quot;Archivo Placeholder&quot;, sans-serif;font-size:16px;font-style:normal;font-weight:500;letter-spacing:-0.02em;line-height:1.2em;transform:none">&nbsp;</span><span style="display:block;font-family:&quot;Archivo&quot;, &quot;Archivo Placeholder&quot;, sans-serif;font-size:16px;font-style:normal;font-weight:500;letter-spacing:-0.02em;line-height:1.2em;transform:none">C</span><span style="display:block;font-family:&quot;Archivo&quot;, &quot;Archivo Placeholder&quot;, sans-serif;font-size:16px;font-style:normal;font-weight:500;letter-spacing:-0.02em;line-height:1.2em;transform:none">V</span></p><style >
+	<div id="main" data-framer-hydrate-v2="{&quot;routeId&quot;:&quot;XQuJCztg5&quot;,&quot;localeId&quot;:&quot;default&quot;,&quot;breakpoints&quot;:[{&quot;hash&quot;:&quot;1y5deqo&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 1280px)&quot;},{&quot;hash&quot;:&quot;1gqtqv1&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 810px) and (max-width: 1279.98px)&quot;},{&quot;hash&quot;:&quot;eh3b30&quot;,&quot;mediaQuery&quot;:&quot;(max-width: 809.98px)&quot;},{&quot;hash&quot;:&quot;egmbj8&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 1280px)&quot;},{&quot;hash&quot;:&quot;160pjv0&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 810px) and (max-width: 1279.98px)&quot;},{&quot;hash&quot;:&quot;1gmdhm4&quot;,&quot;mediaQuery&quot;:&quot;(max-width: 809.98px)&quot;}]}" data-framer-ssr-released-at="2026-09-09T08:45:49.729Z" data-framer-page-optimized-at="2026-09-12T00:17:28.289Z" data-framer-generated-page><!--$--><style  data-framer-html-style>:root body { background: var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243)); }</style><div class="framer-zpn31 framer-egmbj8" data-layout-template="true" style="min-height:100vh;width:auto"><div class="framer-bcxrl8-container"><!--$--><div style="width:100%;height:100%;background-size:161px;background-repeat:repeat;background-image:url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png');opacity:0.04;border-radius:0"></div><!--/$--></div><div class="framer-foun8u-container"><!--$--><div></div><!--/$--></div><!--$--><div></div><!--/$-->
     .rolling-text-inner-R6qelp {
       --font-size: 16px;
       --text: var(--token-2fcd1089-c4fe-44ec-8e47-1defe3c9bd50, rgb(250, 247, 243));
@@ -1218,6 +1451,120 @@
   </div>
 </div>
 
+<!-- More Projects Showcase Modal -->
+<div id="more-projects-modal" class="more-projects-overlay" style="display:none;" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="more-projects-title">
+  <div class="more-projects-dialog">
+    <div class="more-projects-header">
+      <h2 id="more-projects-title" class="more-projects-title">
+        Selected Projects <span class="more-projects-title-badge">4 Featured</span>
+      </h2>
+      <button id="more-projects-close" class="more-projects-close-btn" aria-label="Close Projects Modal">✕</button>
+    </div>
+    
+    <div class="more-projects-body">
+      <!-- Project 1: BreedVision AI -->
+      <div class="project-showcase-card">
+        <div class="project-showcase-img-wrap">
+          <img src="/images/project_breedvision_ai.png" alt="BreedVision AI - Autonomous Cattle Breed Recognition" class="project-showcase-img" loading="lazy" />
+        </div>
+        <div class="project-showcase-content">
+          <div class="project-showcase-tags">
+            <span class="project-showcase-tag">Computer Vision</span>
+            <span class="project-showcase-tag">SIH 2025</span>
+            <span class="project-showcase-tag">TFLite</span>
+            <span class="project-showcase-tag">Python</span>
+          </div>
+          <h3 class="project-showcase-card-title">
+            BreedVision AI
+          </h3>
+          <p class="project-showcase-desc">
+            Autonomous morphological breed recognition and genetic registry for Indigenous Indian Cattle & Buffaloes. Built for Smart India Hackathon (SIH25004) with quantized TFLite INT8 on-device inference, HUD diagnostics, and ICAR-NBAGR classification.
+          </p>
+          <a href="https://github.com/Ishant6565/SIH2025-BreedVision-AI.git" target="_blank" rel="noopener noreferrer" class="project-showcase-action-btn">
+            <svg height="15" width="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            View on GitHub ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2: 3D Developer Portfolio -->
+      <div class="project-showcase-card">
+        <div class="project-showcase-img-wrap">
+          <img src="/images/project_portfolio_3d.png" alt="3D Interactive Developer Portfolio" class="project-showcase-img" loading="lazy" />
+        </div>
+        <div class="project-showcase-content">
+          <div class="project-showcase-tags">
+            <span class="project-showcase-tag">Three.js</span>
+            <span class="project-showcase-tag">React</span>
+            <span class="project-showcase-tag">3D Avatar</span>
+            <span class="project-showcase-tag">Interactive</span>
+          </div>
+          <h3 class="project-showcase-card-title">
+            3D Personal Portfolio
+          </h3>
+          <p class="project-showcase-desc">
+            High-fidelity interactive 3D developer portfolio featuring custom character modeling, responsive mouse-tracking lighting, smooth camera choreography, and dark cyberpunk glow aesthetics.
+          </p>
+          <a href="https://github.com/Ishant6565/portfolio.git" target="_blank" rel="noopener noreferrer" class="project-showcase-action-btn">
+            <svg height="15" width="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            View on GitHub ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3: Chatty Minimal App -->
+      <div class="project-showcase-card">
+        <div class="project-showcase-img-wrap">
+          <img src="/images/project_chat_app.png" alt="Chatty Minimal Real-Time Messaging App" class="project-showcase-img" loading="lazy" />
+        </div>
+        <div class="project-showcase-content">
+          <div class="project-showcase-tags">
+            <span class="project-showcase-tag">Socket.io</span>
+            <span class="project-showcase-tag">React + Vite</span>
+            <span class="project-showcase-tag">Node / Express</span>
+            <span class="project-showcase-tag">Real-Time</span>
+          </div>
+          <h3 class="project-showcase-card-title">
+            Chatty Minimal Real-Time App
+          </h3>
+          <p class="project-showcase-desc">
+            Sleek real-time web chat platform with ultra-low latency WebSocket synchronization, multimedia file sharing, anime avatar profiles, live status indicators, and clean dark brutalist layout.
+          </p>
+          <a href="https://github.com/Ishant6565/chat-app.git" target="_blank" rel="noopener noreferrer" class="project-showcase-action-btn">
+            <svg height="15" width="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            View on GitHub ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4: Cypher Project Web -->
+      <div class="project-showcase-card">
+        <div class="project-showcase-img-wrap">
+          <img src="/images/project_cypher_web.png" alt="Cypher Project Web Experimental Lab" class="project-showcase-img" loading="lazy" />
+        </div>
+        <div class="project-showcase-content">
+          <div class="project-showcase-tags">
+            <span class="project-showcase-tag">Next.js / Framer</span>
+            <span class="project-showcase-tag">AI Builder</span>
+            <span class="project-showcase-tag">Experimental Lab</span>
+            <span class="project-showcase-tag">Creative Engineering</span>
+          </div>
+          <h3 class="project-showcase-card-title">
+            Cypher Project Web
+          </h3>
+          <p class="project-showcase-desc">
+            Personal experimental lab and creative engineering collective. Designed with high-atmosphere cloudscapes, autonomous agent architecture showcases, and production-grade frontend precision.
+          </p>
+          <a href="https://github.com/Ishant6565/Cypher-project-web.git" target="_blank" rel="noopener noreferrer" class="project-showcase-action-btn">
+            <svg height="15" width="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            View on GitHub ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   (function() {
     
@@ -1522,9 +1869,64 @@
       }
     }
 
+    // Attach "View More Projects" button next to "Featured Projects"
+    function attachViewMoreProjectsButton() {
+      if (document.getElementById('view-more-projects-btn')) return;
+
+      var allElements = Array.from(document.querySelectorAll('*'));
+      var headerEl = allElements.find(function(el) {
+        var text = (el.textContent || '').trim();
+        return (text === 'Featured Projects' || text.includes('Featured Projects') || text === 'PROJECTS' || text === 'Selected Projects') && el.children.length === 0;
+      });
+
+      if (!headerEl) {
+        // Fallback: look for projects section header container
+        var projSection = document.getElementById('projects') || 
+                          document.querySelector('[data-framer-name="Projects Section"]') ||
+                          document.querySelector('.framer-1ut795m');
+        if (projSection) {
+          headerEl = projSection.querySelector('h2, h3, [data-framer-name*="Title"], .framer-text');
+        }
+      }
+
+      if (headerEl) {
+        var targetParent = headerEl.parentElement || headerEl;
+        if (targetParent && !targetParent.querySelector('#view-more-projects-btn')) {
+          var btn = document.createElement('button');
+          btn.id = 'view-more-projects-btn';
+          btn.type = 'button';
+          btn.className = 'view-more-projects-trigger-btn';
+          btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg> View More Projects ↗';
+          btn.title = 'Explore additional projects';
+          
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            openMoreProjectsModal();
+          });
+
+          // Insert right beside the header
+          if (headerEl.nextSibling) {
+            headerEl.parentNode.insertBefore(btn, headerEl.nextSibling);
+          } else {
+            headerEl.parentNode.appendChild(btn);
+          }
+
+          // Flex align if not already
+          if (headerEl.parentNode) {
+            headerEl.parentNode.style.display = 'inline-flex';
+            headerEl.parentNode.style.alignItems = 'center';
+            headerEl.parentNode.style.flexWrap = 'wrap';
+            headerEl.parentNode.style.gap = '12px';
+          }
+        }
+      }
+    }
+
     function runEnhancements() {
       attachGithubLogos();
       attachFooterContactButton();
+      attachViewMoreProjectsButton();
     }
 
     // Attach now and on mutation
@@ -1546,7 +1948,7 @@
 
     document.addEventListener('click', function(e) {
       var target = e.target.closest('a, button, [role="button"], .framer-W6IRo, .framer-ek1g9g-container, .framer-1ddqnub-container');
-      if (target && !target.closest('.project-github-icon-link')) {
+      if (target && !target.closest('.project-github-icon-link') && !target.closest('#view-more-projects-btn')) {
         var text = (target.textContent || target.innerText || '').trim();
         var href = target.getAttribute('href') || '';
         if (text.startsWith('Works') || href.indexOf('#projects') !== -1 || href.indexOf('work') !== -1) {
@@ -1562,7 +1964,59 @@
     }, true);
 
     // -----------------------------------------------------------------------
-    // 4. Contact Modal Form & AJAX Delivery Logic
+    // 4. More Projects Modal Logic
+    // -----------------------------------------------------------------------
+    var moreProjectsModal = document.getElementById('more-projects-modal');
+    var moreProjectsClose = document.getElementById('more-projects-close');
+
+    function openMoreProjectsModal() {
+      if (!moreProjectsModal) return;
+      moreProjectsModal.style.display = 'flex';
+      requestAnimationFrame(function() {
+        moreProjectsModal.classList.add('active');
+      });
+      document.body.style.overflow = 'hidden';
+    }
+    window.openMoreProjectsModal = openMoreProjectsModal;
+
+    function closeMoreProjectsModal() {
+      if (!moreProjectsModal) return;
+      moreProjectsModal.classList.remove('active');
+      setTimeout(function() {
+        moreProjectsModal.style.display = 'none';
+        document.body.style.overflow = '';
+      }, 250);
+    }
+    window.closeMoreProjectsModal = closeMoreProjectsModal;
+
+    if (moreProjectsClose) {
+      moreProjectsClose.addEventListener('click', closeMoreProjectsModal);
+    }
+
+    if (moreProjectsModal) {
+      moreProjectsModal.addEventListener('click', function(e) {
+        if (e.target === moreProjectsModal) {
+          closeMoreProjectsModal();
+        }
+      });
+      var dialogEl = moreProjectsModal.querySelector('.more-projects-dialog');
+      if (dialogEl) {
+        dialogEl.addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (moreProjectsModal && moreProjectsModal.classList.contains('active')) {
+          closeMoreProjectsModal();
+        }
+      }
+    });
+
+    // -----------------------------------------------------------------------
+    // 5. Contact Modal Form & AJAX Delivery Logic
     // -----------------------------------------------------------------------
     var contactModal = document.getElementById('contact-modal');
     var contactForm = document.getElementById('cypher-contact-form');
