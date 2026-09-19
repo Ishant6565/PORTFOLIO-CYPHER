@@ -52,8 +52,8 @@ scriptMain = scriptMain.replace(/verticalAlignment:\`top\`,viewBox:\`0 0 1400 37
 scriptMain = scriptMain.replace(/--framer-line-height":\`0\.9em\`/g, '--framer-line-height:`0.75em`');
 
 // Clean up canonical URL
-scriptMain = scriptMain.replaceAll('https://majd-portfolio.framer.website', 'https://cypher-red-iota.vercel.app');
-html = html.replaceAll('https://majd-portfolio.framer.website', 'https://cypher-red-iota.vercel.app');
+scriptMain = scriptMain.replaceAll('https://cypher-portfolio.framer.website', 'https://cypher-red-iota.vercel.app');
+html = html.replaceAll('https://cypher-portfolio.framer.website', 'https://cypher-red-iota.vercel.app');
 
 // =========================================================================
 // 4. GRAPHIC DESIGN POSTERS: ROBUST LIGHTBOX EVENT LISTENER

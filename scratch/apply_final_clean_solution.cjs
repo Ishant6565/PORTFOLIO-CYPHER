@@ -335,7 +335,7 @@ try {
 // -------------------------------------------------------------------------
 // Fix Works nav link to jump to #projects
 scriptMain = scriptMain.replaceAll(':TCEKPjkfm', '#projects');
-scriptMain = scriptMain.replaceAll('https://majd-portfolio.framer.website', 'https://cypher-red-iota.vercel.app');
+scriptMain = scriptMain.replaceAll('https://cypher-portfolio.framer.website', 'https://cypher-red-iota.vercel.app');
 
 try {
   esbuild.transformSync(scriptMain, { loader: 'js' });

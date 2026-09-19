@@ -51,7 +51,7 @@ html = html.replaceAll('/CREATING SINCE 2020', '/CREATING SINCE 2026');
 html = html.replaceAll('/CREATING SINCE 2022', '/CREATING SINCE 2026');
 
 // Bio intro
-const originalIntro = 'I’m Majd, a builder based in Syria, currently working on Templyo, a platform for high-quality Framer templates.';
+const originalIntro = 'I’m Cypher, a builder based in Syria, currently working on Templyo, a platform for high-quality Framer templates.';
 const ishantIntro = 'I’m Ishant, an engineer based in Kolkata, India, crafting intelligent systems, multi-agent AI, and high-performance web experiences.';
 chunk = chunk.replaceAll(originalIntro, ishantIntro);
 html = html.replaceAll(originalIntro, ishantIntro);
@@ -399,7 +399,7 @@ console.log('public/chunks/avatar_chunk.mjs updated and verified!');
 // 7. SCRIPT_MAIN UPDATES
 // =========================================================================
 scriptMain = scriptMain.replaceAll(':TCEKPjkfm', '#projects');
-scriptMain = scriptMain.replaceAll('https://majd-portfolio.framer.website', 'https://cypher-red-iota.vercel.app');
+scriptMain = scriptMain.replaceAll('https://cypher-portfolio.framer.website', 'https://cypher-red-iota.vercel.app');
 esbuild.transformSync(scriptMain, { loader: 'js' });
 fs.writeFileSync('public/chunks/script_main.mjs', scriptMain, 'utf8');
 

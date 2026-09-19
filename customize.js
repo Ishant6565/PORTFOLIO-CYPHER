@@ -21,7 +21,7 @@ const myConfig = {
   
   // Bio Section
   greeting: "Hey!",
-  bioIntro: "I’m Majd, a builder based in Syria, currently working on Templyo, a platform for high-quality Framer templates.",
+  bioIntro: "I’m Cypher, a builder based in Syria, currently working on Templyo, a platform for high-quality Framer templates.",
   bioParagraph1: "I’m a software engineer and Framer creator with a strong focus on building modern, scalable, and conversion-driven web experiences.",
   bioParagraph2: "Over the years, I’ve created and shipped multiple SaaS products and Framer templates used by global customers, helping them launch faster.",
   
@@ -36,8 +36,8 @@ const myConfig = {
 let html = fs.readFileSync('index.html', 'utf8');
 
 // Replace name & logo
-html = html.replaceAll('Majd', myConfig.name);
-html = html.replaceAll('MAJD', myConfig.logoText);
+html = html.replaceAll('Cypher', myConfig.name);
+html = html.replaceAll('CYPHER', myConfig.logoText);
 
 // Replace email
 html = html.replaceAll('mejed@templyo.io', myConfig.email);
