@@ -121,8 +121,20 @@
     visibility: hidden !important;
   }
 
-
-  
+  /* Certificate cards hover & click feedback */
+  .framer-e41vzk-container,
+  .framer-1wumwmx-container,
+  .framer-1tcmudk-container,
+  .framer-lyzmts-container {
+    cursor: pointer !important;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+  }
+  .framer-e41vzk-container:hover,
+  .framer-1wumwmx-container:hover,
+  .framer-1tcmudk-container:hover,
+  .framer-lyzmts-container:hover {
+    transform: translateY(-4px) scale(1.01) !important;
+  }
   </style>
 	
 	
@@ -865,22 +877,39 @@
     // -----------------------------------------------------------------------
     // Coursera Certificate Verification Click Handler
     // -----------------------------------------------------------------------
-    var courseraLinks = {
-      'advanced data': 'https://www.coursera.org/professional-certificates/google-advanced-data-analytics',
-      'data analytics': 'https://www.coursera.org/professional-certificates/google-data-analytics',
-      'python': 'https://www.coursera.org/professional-certificates/google-it-automation-python',
-      'cybersecurity': 'https://www.coursera.org/professional-certificates/google-cybersecurity'
+    var certClassMap = {
+      'framer-e41vzk-container': 'https://www.coursera.org/account/accomplishments/specialization/P9OCCK6GRC3A',
+      'framer-1wumwmx-container': 'https://www.coursera.org/account/accomplishments/specialization/L0OQI8XNOS0O',
+      'framer-1tcmudk-container': 'https://www.coursera.org/account/accomplishments/specialization/7Z85UMY1733N',
+      'framer-lyzmts-container': 'https://www.coursera.org/account/accomplishments/specialization/ZIFF3S5B5OOU'
     };
 
+    var courseraLinks = {
+      'advanced data': 'https://www.coursera.org/account/accomplishments/specialization/7Z85UMY1733N',
+      'data analytic': 'https://www.coursera.org/account/accomplishments/specialization/P9OCCK6GRC3A',
+      'python': 'https://www.coursera.org/account/accomplishments/specialization/L0OQI8XNOS0O',
+      'cyber': 'https://www.coursera.org/account/accomplishments/specialization/ZIFF3S5B5OOU'
+    };
+
+    var certSelector = '.framer-e41vzk-container, .framer-1wumwmx-container, .framer-1tcmudk-container, .framer-lyzmts-container';
+
     document.addEventListener('click', function(e) {
-      var certCard = e.target.closest('.framer-e41vzk-container');
+      var certCard = e.target.closest(certSelector);
       if (certCard) {
-        var text = certCard.textContent.toLowerCase();
         var targetUrl = null;
-        for (var key in courseraLinks) {
-          if (text.indexOf(key) !== -1) {
-            targetUrl = courseraLinks[key];
+        for (var cls in certClassMap) {
+          if (certCard.classList.contains(cls)) {
+            targetUrl = certClassMap[cls];
             break;
+          }
+        }
+        if (!targetUrl) {
+          var text = certCard.textContent.toLowerCase();
+          for (var key in courseraLinks) {
+            if (text.indexOf(key) !== -1) {
+              targetUrl = courseraLinks[key];
+              break;
+            }
           }
         }
         if (targetUrl) {
