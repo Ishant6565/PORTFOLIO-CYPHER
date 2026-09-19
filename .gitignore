@@ -23,5 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-# Temporary scratch screenshots
-scratch/*.png
+# Temporary scratch
+scratch/
