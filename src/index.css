@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --token-bg: #faf7f3;
+  --token-text: #111111;
+  --token-muted: rgba(17, 17, 17, 0.6);
+  --token-border: rgba(17, 17, 17, 0.1);
+  --token-accent: #eb4d6d;
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #faf7f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(17, 17, 17, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(17, 17, 17, 0.4);
+}
+
+/* Smooth font rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Rolling text hover container */
+.rolling-text-wrap {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+.rolling-text-wrap .rolling-inner {
+  display: flex;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rolling-text-wrap:hover .rolling-inner {
+  transform: translateY(-50%);
+}
+
+/* Subtle frosted card */
+.framer-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.framer-card:hover {
+  border-color: rgba(17, 17, 17, 0.2);
+}
+
+/* Dark card */
+.framer-card-dark {
+  background: #111111;
+  color: #faf7f3;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Perspective for 3D flip or card hover */
+.perspective-1000 {
+  perspective: 1000px;
+}
