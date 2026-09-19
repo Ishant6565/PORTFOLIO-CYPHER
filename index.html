@@ -193,35 +193,22 @@
 
 
 <style id="custom-hero-avatar-override">
-  /* 1. Remove the software engineer photo/graphic completely */
+  /* Restore original hero elements layout */
   [data-framer-name="holo_triangle_rounded"],
   .framer-12f4eb2,
-  .framer-1rty0m8 {
-    display: none !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    visibility: hidden !important;
+  .framer-v9grtb {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
-  /* 2. Ensure avatar front & back images render user Sasuke photos directly */
   [data-framer-name="Avatar - Front"] img,
-  .framer-1o6wbt4 img {
-    content: url('/images/avatar-front.jpg') !important;
-    object-fit: cover !important;
-    object-position: center top !important;
-    border-radius: 24px !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
-
+  .framer-1o6wbt4 img,
   [data-framer-name="Avatar - Back"] img,
   .framer-46nqjc img {
-    content: url('/images/avatar-back.jpg') !important;
+    border-radius: 20px !important;
     object-fit: cover !important;
     object-position: center top !important;
-    border-radius: 24px !important;
-    width: 100% !important;
-    height: 100% !important;
   }
 </style>
 
@@ -241,9 +228,7 @@
       if (url.includes('kAftuUN9iRKwIt9M6RqZo9NS314')) {
         return vBack;
       }
-      if (url.includes('lIIjRX5gxRdY7UWw5wqIXicPOA') || url.includes('OLDYsHB9RMavvQrkVRNy08ZXYE')) {
-        return 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3C/svg%3E';
-      }
+      // holo elements preserved
       return url;
     }
 
@@ -264,9 +249,7 @@
           if (val && val.includes('kAftuUN9iRKwIt9M6RqZo9NS314')) {
             return originalSrcsetDescriptor.set.call(this, vBack + ' 800w');
           }
-          if (val && (val.includes('lIIjRX5gxRdY7UWw5wqIXicPOA') || val.includes('OLDYsHB9RMavvQrkVRNy08ZXYE'))) {
-            return originalSrcsetDescriptor.set.call(this, '');
-          }
+          // holo srcset preserved
           return originalSrcsetDescriptor.set.call(this, val);
         },
         get: originalSrcsetDescriptor.get,
@@ -1397,7 +1380,8 @@
 
     function runEnhancements() {
       attachProjectActionButtons();
-      attachViewMoreProjectsButton();
+      var btn = document.getElementById('view-more-projects-btn');
+      if (btn) btn.remove();
     }
 
     runEnhancements();
